@@ -1,0 +1,255 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Pools &amp; Play</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<!-- jQueryMobileCSS - styling-->
+		<link rel="stylesheet" href="css/jqeury.mobile.theme.min.css" />
+				
+		<!-- jQueryMobile icons -->
+		<link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+		
+		<!-- jQueryMobile core CSS -->
+		<link rel="stylesheet" href="css/jquery.mobile.min.css" />
+		<link rel="stylesheet" href="css/bootstrap.css" />
+        
+		<!-- Owl stylesheet -->
+		<link rel="stylesheet" href="css/owl.carousel.css">
+		
+		<!-- Owl Theme -->
+		<link rel="stylesheet" href="css/owl.theme.css">
+				
+		<!-- NIGHTLY style -->
+		<link rel="stylesheet" href="css/nightly.css" />
+				
+		<!-- Load Google Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic|Oswald:400,700' rel='stylesheet' type='text/css'>
+		
+		<!-- Load Font Awesome Icons -->
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		
+		<!-- jQuery -->
+		<script src="js/jquery.min.js"></script>
+		
+		<!-- jQueryMobile -->
+		<script src="js/jquery.mobile.min.js"></script>
+		
+		<!-- Owl Carousel -->
+		<script src="js/owl.carousel.min.js"></script>
+        
+        <script type="text/javascript" src="cordova.js"></script> 
+        
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+        
+        <script type="text/javascript">
+        
+        document.addEventListener("deviceready", onDeviceReady, false); 
+             
+            function onDeviceReady() { 
+                navigator.geolocation.getCurrentPosition(onSuccess, onError); 
+            } 
+             
+            function onSuccess(position) { 
+                initialize(position.coords.latitude,position.coords.longitude); 
+            } 
+                       
+            function onError(error) { 
+                alert('code: '    + error.code    + '\n' + 'message: ' + error.message + '\n'); 
+            }
+
+            var map; 
+            var myLatlng;
+            var myLatlng2;
+            var myLatlng3;
+            var directionsDisplay;
+            var directionsService = new google.maps.DirectionsService();
+            function initialize(lati,longi) { 
+                directionsDisplay = new google.maps.DirectionsRenderer();
+                myLatlng = new google.maps.LatLng(35.144928,-80.743206);  
+                myLatlng3 = new google.maps.LatLng(lati, longi); 
+                var mapOptions = { 
+                    zoom: 8, 
+                    center: myLatlng
+                };             
+                map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions); 
+                var marker = new google.maps.Marker({ 
+                    position: myLatlng,
+					icon: './images/gmap.png', 
+                    map: map, 
+                    title: 'Pools&Play'
+                }); 
+                var myMark = new google.maps.Marker({
+                   position: myLatlng3, 
+                   icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+                   map: map, 
+                   title: 'ME'
+                }); 
+                marker.setMap(map);
+                myMark.setMap(map);
+               
+                var infotext = "<div><div>" +
+                    "<span style='font-size:18px;font-weight:bold; left:35px'>Pools&Play</span><br>" +
+                    "<a href=\"javascript:calcRoute(35.144928,-80.743206)\"> 9222 Monroe Road <br> Charlotte, NC 28270 </a><br>"+     
+                    "<a href=\"tel:+17043212997\">+1(704)-321-2997</a>" +
+                    "</div><div style='position:absolute; left:0'><img src='" +
+                    "images/icon-30.png'>" +
+                    "</img></div></div>";
+                
+                var infowindow = new google.maps.InfoWindow();
+                infowindow.setContent(infotext);
+
+
+                google.maps.event.addListener(marker, 'click', function(){
+                    infowindow.open(map, marker);    
+                })
+            } 
+
+            function calcRoute(a,b){    
+                directionsDisplay.setMap(map);
+                navigator.geolocation.getCurrentPosition(success);
+                function success(posicion){
+                    var lati = posicion.coords.latitude;
+                    var longi = posicion.coords.longitude;
+                    var start = lati+","+longi;
+                    var end = a+","+b;
+                    var request = {
+                        origin:start,
+                        destination:end,
+                        travelMode: google.maps.TravelMode.DRIVING
+                    };
+                    directionsService.route(request, function(response, status) {
+                        if (status == google.maps.DirectionsStatus.OK) {
+                            directionsDisplay.setDirections(response);
+                        }
+                    })
+                }
+            }
+
+        </script> 
+
+        <meta charset="utf-8" /> 
+        <meta name="format-detection" content="telephone=no" /> 
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" /> 
+        <link rel="stylesheet" type="text/css" href="css/index.css" /> 
+        <title>Pools And Play Location</title> 
+        <style type="text/css"> 
+           #map-canvas{ 
+                width:100%; 
+                height:320px 
+            }
+
+        </style> 
+
+    </head>
+    	<body>
+        <div data-role="page" data-theme='a'>
+            <div data-role="panel" data-display="push" id="sidebar" data-theme="a" style="background-color:#06C; border:none;">
+                <ul data-role="listview">
+                    <li data-icon='false'><a data-ajax="false" href="index.html">Home</a></li>
+                    <li data-icon='false' class="menu-item-has-children"><a data-ajax="false" href="swingsets.html">Swingsets&nbsp;<span class="menu-mark">6</span></a>
+                        <ul data-role="listview" class="sub-menu">
+                        	<li data-icon='false'><a href="twwss.html">Williamsburg</a></li>
+                          	<li data-icon='false'><a href="tlwss.html">Lexington</a></li>
+                          	<li data-icon='false'><a href="trwss.html">Ridgefield</a></li>
+                            <li data-icon='false'><a href="tywss.html">Yorktown</a></li>
+                          	<li data-icon='false'><a href="tmwss.html">Manchester</a></li>
+                          	<li data-icon='false'><a href="tpwss.html">Piermont</a></li>
+                        </ul>
+                    </li>
+                    <li data-icon='false'><a data-ajax="false" href="birthday.html">Birthday<br>Parties</a></li>
+                    <li data-icon='false'><a data-ajax="false" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div data-role="header" data-tap-toggle="false" data-theme='a' style="background-color:#06C; position:fixed; top:0; z-index:9000; height:50px; border:none">
+                <a href='#sidebar'data-role="none">
+                	<img src="images/menu-icon.png" alt="sidebar" id="header-menu-icon" style="top:20px" />
+				</a>
+            </div>
+            <div>
+                <img src="images/logo.png" width="100" style="position:fixed; top:20px; right:20px; z-index:1000; width:20%; max-width:100px" />
+			</div>
+            <div data-role="content">
+                <div style="position:relative; top:50px">
+                    <div id="map-canvas">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-8 col-md-offset-2">
+                                    <h2>
+                                        CONTACT US
+                                    </h2>
+                                    <form action="http://poolsandplay.com/thank-you.php" method="post">
+                                        <p>
+                                            <label>
+                                                Name
+                                            </label>
+                                            <input id="name" name="name" class="form-control" required type="text" />
+                                        </p>
+                                        <p>
+                                            <label>
+                                                Email Address
+                                            </label>
+                                            <input id="email" name="email" class="form-control" required type="email" />
+                                        </p>
+                                        <p>
+                                            <label>
+                                                Phone Number
+                                            </label>
+                                            <input id="phone" name="phone" class="form-control" type="tel" />
+                                        </p>
+                                        <p>
+                                            <label>
+                                                Message
+                                            </label>
+                                            <textarea id="message" name="message" class="form-control" required rows="5">
+                                            </textarea>
+                                        </p>
+                                        <p>
+                                            <button class="btn btn-success btn-lg" type="submit" style="background-color:#093; color:#FFF">
+                                                Send
+                                            </button>
+                                        </p>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			<script type="text/javascript">
+        		$(document).ready(function() {
+					$("#slider").owlCarousel({   
+						slideSpeed : 700,
+						paginationSpeed : 700,
+						rewindSpeed : 1500,
+						singleItem : true,
+						pagination : true,
+						lazyLoad : true,
+						autoPlay : 7000,
+						navigation: true,
+						navigationText: [
+							"<i class='owl-nav-left fa fa-angle-left'></i>",
+							"<i class='owl-nav-right fa fa-angle-right'></i>"
+						]
+					});          
+					$("#gallery").owlCarousel({    
+						slideSpeed : 700,
+						paginationSpeed : 700,
+						rewindSpeed : 1500,
+						singleItem : true,
+						pagination : true,
+						lazyLoad : true,
+						autoPlay : 7000,
+						navigation: true,
+						navigationText: [
+							"<i class='owl-nav-left fa fa-angle-left'></i>",
+							"<i class='owl-nav-right fa fa-angle-right'></i>"
+						]
+					});    
+				});
+        	</script>
+		</div>
+    </body>
+</html>
