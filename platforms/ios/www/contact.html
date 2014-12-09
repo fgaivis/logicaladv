@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Pools &amp; Play</title>
+        <title>Logical Advantage</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
 		<!-- jQueryMobileCSS - styling-->
@@ -66,7 +66,7 @@
             var directionsService = new google.maps.DirectionsService();
             function initialize(lati,longi) { 
                 directionsDisplay = new google.maps.DirectionsRenderer();
-                myLatlng = new google.maps.LatLng(35.144928,-80.743206);  
+                myLatlng = new google.maps.LatLng(35.183986,-80.9255241);  
                 myLatlng3 = new google.maps.LatLng(lati, longi); 
                 var mapOptions = { 
                     zoom: 8, 
@@ -77,7 +77,7 @@
                     position: myLatlng,
 					icon: './images/gmap.png', 
                     map: map, 
-                    title: 'Pools&Play'
+                    title: 'Logical Advantage'
                 }); 
                 var myMark = new google.maps.Marker({
                    position: myLatlng3, 
@@ -89,12 +89,10 @@
                 myMark.setMap(map);
                
                 var infotext = "<div><div>" +
-                    "<span style='font-size:18px;font-weight:bold; left:35px'>Pools&Play</span><br>" +
-                    "<a href=\"javascript:calcRoute(35.144928,-80.743206)\"> 9222 Monroe Road <br> Charlotte, NC 28270 </a><br>"+     
-                    "<a href=\"tel:+17043212997\">+1(704)-321-2997</a>" +
-                    "</div><div style='position:absolute; left:0'><img src='" +
-                    "images/icon-30.png'>" +
-                    "</img></div></div>";
+                    "<span style='font-size:18px;font-weight:bold; left:35px'>Logical Advantage</span><br>" +
+                    "<a href=\"javascript:calcRoute(35.144928,-80.743206)\"> 2105 Water Ridge Parkway <br> Charlotte, NC 28217 <br> Suite 570 </a><br>"+     
+                    "<a href=\"tel:+17043775066\">+1(704)-377-5066</a>" +
+                    "</div></div>";
                 
                 var infowindow = new google.maps.InfoWindow();
                 infowindow.setContent(infotext);
@@ -142,82 +140,75 @@
         </style> 
 
     </head>
-    	<body>
+	<body>
+    
         <div data-role="page" data-theme='a'>
-            <div data-role="panel" data-display="push" id="sidebar" data-theme="a" style="background-color:#06C; border:none;">
+        
+            <div data-role="panel" data-display="push" id="sidebar" data-theme="a" style="background-color:#CCC; border:none">
                 <ul data-role="listview">
-                    <li data-icon='false'><a data-ajax="false" href="index.html">Home</a></li>
-                    <li data-icon='false' class="menu-item-has-children"><a data-ajax="false" href="swingsets.html">Swingsets&nbsp;<span class="menu-mark">6</span></a>
-                        <ul data-role="listview" class="sub-menu">
-                        	<li data-icon='false'><a href="twwss.html">Williamsburg</a></li>
-                          	<li data-icon='false'><a href="tlwss.html">Lexington</a></li>
-                          	<li data-icon='false'><a href="trwss.html">Ridgefield</a></li>
-                            <li data-icon='false'><a href="tywss.html">Yorktown</a></li>
-                          	<li data-icon='false'><a href="tmwss.html">Manchester</a></li>
-                          	<li data-icon='false'><a href="tpwss.html">Piermont</a></li>
-                        </ul>
-                    </li>
-                    <li data-icon='false'><a data-ajax="false" href="birthday.html">Birthday<br>Parties</a></li>
-                    <li data-icon='false'><a data-ajax="false" href="contact.html">Contact</a></li>
+                    <li data-icon='false'><a data-ajax="false" href="index.html" style="color:#000">Home</a></li>
+                    <li data-icon='false'><a data-ajax="false" href="aboutus.html" style="color:#000">About Us</a></li>
+                    <li data-icon='false'><a data-ajax="false" href="services.html" style="color:#000">Services</a></li>
+                    <li data-icon='false'><a data-ajax="false" href="contact.html" style="color:#000">Contact</a></li>
                 </ul>
-            </div>
-            <div data-role="header" data-tap-toggle="false" data-theme='a' style="background-color:#06C; position:fixed; top:0; z-index:9000; height:50px; border:none">
+            </div> 
+    
+            <div data-role="header" data-tap-toggle="false" data-theme='a' style="background-color:#CCC; position:fixed; top:0; z-index:9000; height:50px; border:none">
                 <a href='#sidebar'data-role="none">
-                	<img src="images/menu-icon.png" alt="sidebar" id="header-menu-icon" style="top:20px" />
+                	<img src="images/menu-icon-bk.png" alt="sidebar" id="header-menu-icon" style="top:20px" />
 				</a>
             </div>
             <div>
-                <img src="images/logo.png" width="100" style="position:fixed; top:20px; right:20px; z-index:1000; width:20%; max-width:100px" />
+                	<img src="images/logo.png" width="100" style="position:fixed; top:5px; right:10px; z-index:1000; width:20%; max-width:100px" />
 			</div>
+            
             <div data-role="content">
-                <div style="position:relative; top:50px">
-                    <div id="map-canvas">
+                <div style="position:relative; top:0px">
+                    <div class="row">
+                        <div style="background-image:url(images/2014/10/title-bg.jpg); position:relative; top:15px" align="center">
+                            <h1>Contact Us</h1>
+                        </div>
+                    </div>
+                    <div id="map-canvas" style="position:relative; top:50px">
                     </div>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
                                     <h2>
-                                        CONTACT US
+                                        <br>
+                                        <br>
                                     </h2>
-                                    <form action="http://poolsandplay.com/thank-you.php" method="post">
-                                        <p>
-                                            <label>
-                                                Name
-                                            </label>
-                                            <input id="name" name="name" class="form-control" required type="text" />
-                                        </p>
-                                        <p>
-                                            <label>
-                                                Email Address
-                                            </label>
-                                            <input id="email" name="email" class="form-control" required type="email" />
-                                        </p>
-                                        <p>
-                                            <label>
-                                                Phone Number
-                                            </label>
-                                            <input id="phone" name="phone" class="form-control" type="tel" />
-                                        </p>
-                                        <p>
-                                            <label>
-                                                Message
-                                            </label>
-                                            <textarea id="message" name="message" class="form-control" required rows="5">
-                                            </textarea>
-                                        </p>
-                                        <p>
-                                            <button class="btn btn-success btn-lg" type="submit" style="background-color:#093; color:#FFF">
-                                                Send
-                                            </button>
-                                        </p>
-                                    </form>
+                                    <button type="button" onClick="window.plugins.socialsharing.shareViaEmail('Please enter your information:<br><br>Name:<br><br>Phone:<br><br>Message:','You have a new contact message from your mobile App',['johnf@logicaladvantage.com','oms@cgrcreative.com']);" class="btn btn-default" style="background-color:#000; color:#FFF">
+										Mail Us
+									</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+			<footer class="ui-footer" style="border:none; position:fixed; bottom:0; width:100%">
+                <div class="container" style="background-color:#39F; width:100%">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <div class="social-icons" style="margin-top:10px; color:#FFF" align="center">
+                            <button type="button" onClick="location.href='https://twitter.com/LogicalAdv'" class="fa fa-twitter" style="background-color:none; border:none; width:10%; background:none">
+                            </button>
+							<button type="button" onClick="location.href='https://www.facebook.com/LogicalAdvantage'" class="fa fa-facebook" style="background-color:none; border:none; width:10%; background:none">
+                            </button>
+                            <button type="button" onClick="location.href='https://www.linkedin.com/company/logical-advantage?trk=saber_s000001e_1000'" class="fa fa-linkedin" style="background-color:none; border:none; width:10%; background:none">
+                            </button>
+	                        <button type="button" onClick="location.href='https://www.youtube.com/user/logicaladvantage'" class="fa fa-youtube" style="background-color:none; border:none; width:10%; background:none">
+                            </button>
+                            <button type="button" onClick="location.href='http://www.meetup.com/Logical-Advantage-Charlotte-Tech-Talks/'" class="btn" style="background-color:none; border:none; width:10%; background:none"><img src="images/2014/10/meetup.png" style="width:30px">
+                            </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			</footer>
+		</div>
 			<script type="text/javascript">
         		$(document).ready(function() {
 					$("#slider").owlCarousel({   
