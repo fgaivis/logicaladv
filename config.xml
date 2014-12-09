@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.wbi.PoolsAndPlay" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Pools And Play</name>
+    <name>Logical Advantage</name>
     <description>
-        An App with Pools And Play Web content for ease access.
+        An App with Logical Advantage content for ease access.
     </description>
     <author email="fgonzalez@wbinnova.com" href="http://www.wbinnova.com">
         We Built It Innovations!
