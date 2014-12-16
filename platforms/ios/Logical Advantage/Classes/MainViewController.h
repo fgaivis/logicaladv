@@ -17,25 +17,24 @@
  under the License.
  */
 
-#import "NSArray+Comparisons.h"
+//
+//  MainViewController.h
+//  Logical Advantage
+//
+//  Created by ___FULLUSERNAME___ on ___DATE___.
+//  Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
+//
 
-@implementation NSArray (Comparisons)
+#import <Cordova/CDVViewController.h>
+#import <Cordova/CDVCommandDelegateImpl.h>
+#import <Cordova/CDVCommandQueue.h>
 
-- (id)objectAtIndex:(NSUInteger)index withDefault:(id)aDefault
-{
-    id obj = nil;
+@interface MainViewController : CDVViewController
 
-    @try {
-        obj = [self objectAtIndex:index];
-        if ((obj == [NSNull null]) || (obj == nil)) {
-            return aDefault;
-        }
-    }
-    @catch(NSException* exception) {
-        NSLog(@"Exception - Name: %@ Reason: %@", [exception name], [exception reason]);
-    }
+@end
 
-    return obj;
-}
+@interface MainCommandDelegate : CDVCommandDelegateImpl
+@end
 
+@interface MainCommandQueue : CDVCommandQueue
 @end

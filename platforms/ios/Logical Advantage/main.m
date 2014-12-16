@@ -16,26 +16,20 @@
  specific language governing permissions and limitations
  under the License.
  */
+//
+//  main.m
+//  Logical Advantage
+//
+//  Created by ___FULLUSERNAME___ on ___DATE___.
+//  Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
+//
 
-#import "NSArray+Comparisons.h"
+#import <UIKit/UIKit.h>
 
-@implementation NSArray (Comparisons)
-
-- (id)objectAtIndex:(NSUInteger)index withDefault:(id)aDefault
+int main(int argc, char* argv[])
 {
-    id obj = nil;
-
-    @try {
-        obj = [self objectAtIndex:index];
-        if ((obj == [NSNull null]) || (obj == nil)) {
-            return aDefault;
-        }
+    @autoreleasepool {
+        int retVal = UIApplicationMain(argc, argv, nil, @"AppDelegate");
+        return retVal;
     }
-    @catch(NSException* exception) {
-        NSLog(@"Exception - Name: %@ Reason: %@", [exception name], [exception reason]);
-    }
-
-    return obj;
 }
-
-@end

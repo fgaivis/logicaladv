@@ -17,25 +17,26 @@
  under the License.
  */
 
-#import "NSArray+Comparisons.h"
+//
+//  AppDelegate.h
+//  Logical Advantage
+//
+//  Created by ___FULLUSERNAME___ on ___DATE___.
+//  Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
+//
 
-@implementation NSArray (Comparisons)
+#import <UIKit/UIKit.h>
 
-- (id)objectAtIndex:(NSUInteger)index withDefault:(id)aDefault
-{
-    id obj = nil;
+#import <Cordova/CDVViewController.h>
 
-    @try {
-        obj = [self objectAtIndex:index];
-        if ((obj == [NSNull null]) || (obj == nil)) {
-            return aDefault;
-        }
-    }
-    @catch(NSException* exception) {
-        NSLog(@"Exception - Name: %@ Reason: %@", [exception name], [exception reason]);
-    }
+@interface AppDelegate : NSObject <UIApplicationDelegate>{}
 
-    return obj;
-}
+// invoke string is passed to your app on launch, this is only valid if you
+// edit Logical Advantage-Info.plist to add a protocol
+// a simple tutorial can be found here :
+// http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
+
+@property (nonatomic, strong) IBOutlet UIWindow* window;
+@property (nonatomic, strong) IBOutlet CDVViewController* viewController;
 
 @end
