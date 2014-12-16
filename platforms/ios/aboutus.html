@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Logical Advantage</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<!-- jQueryMobileCSS - styling-->
+		<link rel="stylesheet" href="css/jqeury.mobile.theme.min.css" />
+				
+		<!-- jQueryMobile icons -->
+		<link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+		
+		<!-- jQueryMobile core CSS -->
+		<link rel="stylesheet" href="css/jquery.mobile.min.css" />
+		<link rel="stylesheet" href="css/bootstrap.css" />
+        
+		<!-- Owl stylesheet -->
+		<link rel="stylesheet" href="css/owl.carousel.css">
+		
+		<!-- Owl Theme -->
+		<link rel="stylesheet" href="css/owl.theme.css">
+				
+		<!-- NIGHTLY style -->
+		<link rel="stylesheet" href="css/nightly.css" />
+				
+		<!-- Load Google Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic|Oswald:400,700' rel='stylesheet' type='text/css'>
+		
+		<!-- Load Font Awesome Icons -->
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		
+		<!-- jQuery -->
+		<script src="js/jquery.min.js"></script>
+		
+		<!-- jQueryMobile -->
+		<script src="js/jquery.mobile.min.js"></script>
+		
+		<!-- Owl Carousel -->
+		<script src="js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    </head>
+	<body>
+    
+        <div data-role="page" data-theme='a'>
+        
+            <div data-role="panel" data-display="push" id="sidebar" data-theme="a" style="background-color:#CCC; border:none">
+                <ul data-role="listview">
+                    <li data-icon='false'><a data-ajax="false" href="index.html" style="color:#000">Home</a></li>
+                    <li data-icon='false'><a data-ajax="false" href="aboutus.html" style="color:#000">About Us</a></li>
+                    <li data-icon='false'><a data-ajax="false" href="services.html" style="color:#000">Services</a></li>
+                    <li data-icon='false'><a data-ajax="false" href="contact.html" style="color:#000">Contact</a></li>
+                </ul>
+            </div> 
+    
+            <div data-role="header" data-tap-toggle="false" data-theme='a' style="background-color:#CCC; position:fixed; top:0; z-index:9000; height:50px; border:none">
+                <a href='#sidebar'data-role="none">
+                	<img src="images/menu-icon-bk.png" alt="sidebar" id="header-menu-icon" style="top:20px" />
+				</a>
+            </div>
+            <div>
+                	<img src="images/logo.png" width="100" style="position:fixed; top:5px; right:10px; z-index:1000; width:20%; max-width:100px" />
+			</div>
+            
+            <div data-role="content">
+    			<div class="row">
+					<div style="background-image:url(images/2014/10/title-bg.jpg); position:relative; top:15px" align="center">
+						<h1>About Us</h1>
+    				</div>
+                    <div class="container">
+                        <div class="row" style="margin-bottom: 10px;">
+                            <div class="col-md-6 col-md-offset-3 text-center">
+                                <h3>
+                                	What We Do
+                                </h3>
+                                <p>
+                                	At Logical Advantage, we offer a suite of customized services to help your organization realize IT success. With our proven methodologies, 
+                                    keen understanding of business operations and an unyielding commitment to quality, we bridge the gap between resources and results.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container" style="background-color:#39F; color:#FFF">
+                        <div class="row" style="margin-bottom: 10px;">
+                            <div class="col-md-6 col-md-offset-3 text-center">
+                                <h3>
+                                	Our Mission
+                                </h3>
+                                <p>
+                                	Our mission is to partner with our clients to provide strategies and solutions that maximize the ROI of Enterprise Asset Intelligence and 
+                                    Human Capital Development.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row" style="margin-bottom: 10px;">
+                            <div class="col-md-6 col-md-offset-3 text-center">
+                                <h3>
+                                	Industry Involvement
+                                </h3>
+                                <p>
+                                	At Logical Advantage, we believe the health of our organization is a reflection of the health of our community. With that in mind, 
+                                    we proudly support these organizations who foster development of the IT and business community.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container" style="background-color:#39F; color:#FFF">
+                        <div class="row" style="margin-bottom: 10px;">
+                            <div class="col-md-6 col-md-offset-3 text-center">
+                                <h3>
+                                	Giving
+                                </h3>
+                                <p>
+                                	Each year, Logical Advantage selects multiple organizations that are important to our staff. These include organizations that are supported 
+                                    by our staff or have supported our staff directly. Rather than sending gifts to our clients during the holidays, we make donations to these 
+                                    organizations on their behalf. Since 2003, in addition to non-monetary support, such as time and materials, Logical Advantage has donated 
+                                    over $10,000.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" onClick="location.href='contact.html'" class="btn btn-default" style="background-color:#000; color:#FFF">
+						Contact Us
+					</button>
+    			</div>
+    		</div>
+            
+            
+            <div data-role="content">
+                <div style="position:relative;top:50px">                
+                    
+                   
+                </div>
+			</div>
+			<script type="text/javascript">
+        		$(document).ready(function() {
+					$("#slider").owlCarousel({   
+						slideSpeed : 700,
+						paginationSpeed : 700,
+						rewindSpeed : 1500,
+						singleItem : true,
+						pagination : true,
+						lazyLoad : true,
+						autoPlay : 7000,
+						navigation: true,
+						navigationText: [
+							"<i class='owl-nav-left fa fa-angle-left'></i>",
+							"<i class='owl-nav-right fa fa-angle-right'></i>"
+						]
+					});          
+					$("#gallery").owlCarousel({    
+						slideSpeed : 700,
+						paginationSpeed : 700,
+						rewindSpeed : 1500,
+						singleItem : true,
+						pagination : true,
+						lazyLoad : true,
+						autoPlay : 7000,
+						navigation: true,
+						navigationText: [
+							"<i class='owl-nav-left fa fa-angle-left'></i>",
+							"<i class='owl-nav-right fa fa-angle-right'></i>"
+						]
+					});    
+				});
+        	</script>
+		</div>
+    </body>
+</html>
