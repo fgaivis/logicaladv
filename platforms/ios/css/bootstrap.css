@@ -123,7 +123,7 @@ button {
 }
 button,
 select {
-  text-transform: none;
+  text-transform: uppercase;
 }
 button,
 html input[type="button"],
@@ -2767,7 +2767,7 @@ select[multiple].form-group-lg .form-control {
           user-select: none;
   background-image: none;
   border: 1px solid transparent;
-  border-radius: 4px;
+  /*border-radius: 4px;*/
 }
 .btn:focus,
 .btn:active:focus,
